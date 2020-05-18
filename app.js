@@ -29,9 +29,16 @@ var Blog = mongoose.model("Blog", blogSchema);
 
 //RESTFUL ROUTES
 
-// app.get("/", function(req, res){
-//     res.redirect("/blogs");
-// });
+app.get("/", function(req, res){
+    // res.redirect("/blogs");
+    Blog.find({}, function(err, blogs){
+        if(err){
+            console.log("ERROR");
+        } else {
+            res.render("index", {blogs: blogs})
+        }
+    })
+});
 //INDEX ROUTE
 app.get("/blogs", function(req, res){
     Blog.find({}, function(err, blogs){
