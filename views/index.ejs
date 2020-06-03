@@ -21,7 +21,9 @@
                         </span>
                     </div> <!-- meta -->
                     <div class="description">
+                        <% if(blog.body && blog.body.length > 0){ %> 
                         <p> <%- blog.body.substring(0, 100) %>... </p>
+                        <% } %> 
                     </div> <!-- description -->
                     <div class="extra">
                         <a class="ui floated basic violet button" href="/blogs/<%= blog._id %>">
