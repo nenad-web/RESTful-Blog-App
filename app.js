@@ -5,7 +5,8 @@ var express          = require("express"),
     methodOverride   = require("method-override"),
     expressSanitizer = require("express-sanitizer");
 //app config
-mongoose.connect("mongodb://localhost/restful_blog_app", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+// mongoose.connect("mongodb://localhost/restful_blog_app", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect("mongodb+srv://rest-blog:webdev@cluster0-qkkpe.mongodb.net/restful_blog_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
